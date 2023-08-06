@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title> Password Generator</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <link rel="stylesheet" href="generator.css">
+</head>
+<body>
+  <div class="container">
+    <h1> Password Generator</h1>
+    
+    <!-- Password display and copy btn -->
+    <div class="display">
+      <input type="text" name="display" id="display" placeholder="p4$5W0rd!" disabled />
+      <button id="copyBtn"><i class="fa fa-copy"></i></button>
+    </div>
+    <!-- Password display and copy btn ends -->
+    
+      <!-- Password length fields -->
+  <div class="password-length">
+    <div class="length-con">
+      <label for="passwordLength">Password Length</label>
+      <span id="lengthVal">0</span>
+    </div>
+
+    <input type="range" name="passwordLength" id="passwordLength" min="0" max="20" value="0" />
+  </div>  
+    <!-- ends-->
+  
+  <div class="options">
+    <label>
+      <input type="checkbox" name="upperCase" id="upperCase" />
+      Include UpperCase Letters
+    </label>
+    <label>
+      <input type="checkbox" name="lowerCase" id="lowerCase" />
+      Include LowerCase Letters
+    </label>
+    <label>
+      <input type="checkbox" name="numbers" id="numbers" />
+      Include Numbers
+    </label>
+    <label>
+      <input type="checkbox" name="symbols" id="symbols" />
+      Include Symbols
+    </label>
+  </div>
+  
+  <div class="strength-con">
+    <span class="strength"> Strength</span>
+    <div>
+      <span class="box" id="box1"></span>
+      <span class="box" id="box2"></span>
+      <span class="box" id="box3"></span>
+      <span id="strengthRating"> Weak</span>
+  </div>
+  </div>
+  
+  <button id="generateBtn" class="generate-btn">Generate Password >></button>
+</div>
+<script src="generator.js"></script>
+</body>
+</html>
+
