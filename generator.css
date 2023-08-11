@@ -135,6 +135,7 @@ h1 {
   width: 100%;
   accent-color: var(--green);
   border: none;
+  outline: none;
 }
 
 

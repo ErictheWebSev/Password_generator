@@ -45,23 +45,23 @@ function passwordStrength(password) {
   const box2 = document.getElementById('box2');
   const box3 = document.getElementById('box3');
   
-  const setUsed = {
+ /* const setUsed = {
     upperCase: /[A-Z]/.test(password),
     lowerCase: /[a-z]/.test(password),
     numbers: /[0-9]/.test(password),
     symbols: /[!@#$%&^*(_)+[{]}<>:|]/.test(password)
   }
   
-  const numSetUsed = Object.values(setUsed).filter((value) => value).length;
+  const numSetUsed = Object.values(setUsed).filter((value) => value).length;*/
 
   
-  if (password.length > 8 && numSetUsed >= 3) {
+  if (password.length > 8) {
     strengthRating.textContent = 'Strong';
     strengthRating.style.color = '#15ff62';
     box1.style.backgroundColor = '#15ff62';
     box2.style.background = '#15ff62';
     box3.style.background = '#15ff62';
-  } else if (password.length >= 5 && password.length <= 8 && numSetUsed >= 2) {
+  } else if (password.length >= 5 && password.length <= 8) {
     strengthRating.textContent = 'Medium'
     strengthRating.style.color = 'orange';
     box1.style.background = 'orange';
