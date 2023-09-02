@@ -141,7 +141,6 @@ document.getElementById('copyBtn').addEventListener('click', () => {
   display.select();
   display.setSelectionRange(0,99999);
   document.execCommand('copy');
-  console.log(display)
- navigator.clipboard.writeText(display.value);
-  alert('Password copied to clipboard');
+  navigator.clipboard.writeText(display.value);
+  alert(`${display.value} copied..`);
 })
