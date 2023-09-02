@@ -70,7 +70,7 @@ function passwordStrength(password) {
     || includeUpperCase && includeLowerCase && includeSymbols ||
     includeUpperCase && includeLowerCase && includeNumbers || includeSymbols &&
     includeNumbers && includeLowerCase ||  includeSymbols &&
-    includeNumbers && includeUpperCase;
+    includeNumbers && includeUpperCase || includeNumbers && includeSymbols;
     if (condition) {
       strengthRating.textContent = 'Strong';
       strengthRating.style.color = '#15ff62';
