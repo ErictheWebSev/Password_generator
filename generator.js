@@ -116,6 +116,7 @@ function passwordStrength(password) {
     box1.style.background = 'red';
     box2.style.background = 'transparent';
     box3.style.background = 'transparent';
+    box4.style.background = 'transparent';
   }
 }
 
