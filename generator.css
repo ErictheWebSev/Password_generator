@@ -1,48 +1,4 @@
-/* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-  color: white;
-  background: transparent;
-  border: 0;
-  outline: 0;
-  appearance: none;
-}
-
-
-
-body {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  min-height: 100vh;
-  background: rgba(0, 0, 0, 0.92);
-  font-family: monospace, sans-serif;
-  position: relative;
-}
-
-.container {
-  width: 350px;
-  height: 450px;
-  background: rgba(200, 200, 200, 0.12);
-  padding: 10px;
-  position: relative;
-  display: block ;
-}
-
-h1 {
-  position: absolute;
-  font-size: 2rem;
-  letter-spacing: 0..64px;
-  top: -10px;
-  color: grey;
-}
-
-.display {
-  display: flex;
-  justify-content: space-between;
-}*/
-
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap');
 
 * {
 
@@ -52,6 +8,7 @@ h1 {
     padding: 0;
     box-sizing: border-box;
     color: white;
+    font-family: "Poppins", sans-serif;
 }
 
 :root {
@@ -168,6 +125,7 @@ h1 {
   text-transform: uppercase;
   font-weight: bold;
   font-size: 1rem;
+  margin-right: 10px
 }
 
 .generate-btn {
@@ -194,11 +152,11 @@ h1 {
 
 
 .box {
-  width: 50px;
+  width: 45px;
   height: 100px;
-  border: 1px solid white;
+  border: 1px solid #555;
   padding: 10px;
-  margin: 5px;
+  margin: 5px 3px;
 }
 
 

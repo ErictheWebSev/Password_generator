@@ -52,21 +52,64 @@ function passwordStrength(password) {
     symbols: /[!@#$%&^*(_)+[{]}<>:|]/.test(password)
   }
   
-  const numSetUsed = Object.values(setUsed).filter((value) => value).length;*/
-
-  
-  if (password.length > 8) {
     strengthRating.textContent = 'Strong';
     strengthRating.style.color = '#15ff62';
     box1.style.backgroundColor = '#15ff62';
     box2.style.background = '#15ff62';
     box3.style.background = '#15ff62';
-  } else if (password.length >= 5 && password.length <= 8) {
+    
+  
+  const numSetUsed = Object.values(setUsed).filter((value) => value).length;*/
+
+   const includeUpperCase = document.getElementById('upperCase').checked;
+    const includeLowerCase = document.getElementById('lowerCase').checked;
+    const includeNumbers = document.getElementById('numbers').checked;
+    const includeSymbols = document.getElementById('symbols').checked;
+ if (password.length >= 12) { // Password length is above 14
+    let condition = includeUpperCase && includeLowerCase && includeNumbers && includeSymbols
+    || includeUpperCase && includeLowerCase && includeSymbols ||
+    includeUpperCase && includeLowerCase && includeNumbers || includeSymbols &&
+    includeNumbers && includeLowerCase ||  includeSymbols &&
+    includeNumbers && includeUpperCase;
+    if (condition) {
+      strengthRating.textContent = 'Strong';
+      strengthRating.style.color = '#15ff62';
+      box1.style.backgroundColor = '#15ff62';
+      box2.style.background = '#15ff62';
+      box3.style.background = '#15ff62';
+      box4.style.background = '#15ff62';
+    } else {
+      strengthRating.textContent = 'Moderate'; // New strength level
+      strengthRating.style.color = 'blue';
+      box1.style.background = 'blue';
+      box2.style.background = 'blue';
+      box3.style.background = 'blue';
+      box4.style.background = 'transparent';
+    }
+  } else if (password.length >= 8) {
+
+    if (includeUpperCase && includeLowerCase && includeNumbers && includeSymbols) {
+      strengthRating.textContent = 'Strong';
+      strengthRating.style.color = '#15ff62';
+      box1.style.backgroundColor = '#15ff62';
+      box2.style.background = '#15ff62';
+      box3.style.background = '#15ff62';
+      box4.style.background = '#15ff62';
+    } else {
+      strengthRating.textContent = 'Medium';
+      strengthRating.style.color = 'orange';
+      box1.style.background = 'orange';
+      box2.style.background = 'orange';
+      box3.style.background = 'transparent';
+      box4.style.background = 'transparent';
+    }
+    } else if (password.length >= 6 && password.length <= 8) {
     strengthRating.textContent = 'Medium'
     strengthRating.style.color = 'orange';
     box1.style.background = 'orange';
     box2.style.background = 'orange';
     box3.style.background = 'transparent';
+    box4.style.background = 'transparent';
   } else {
     strengthRating.textContent = 'Weak';
     strengthRating.style.color = 'red';
@@ -94,7 +137,10 @@ document.getElementById('passwordLength').addEventListener('input', () => {
 
 document.getElementById('copyBtn').addEventListener('click', () => {
   const display = document.getElementById('display');
-  display.select()
+  display.select();
+  display.setSelectionRange(0,99999);
   document.execCommand('copy');
+  console.log(display)
+ navigator.clipboard.writeText(display.value);
   alert('Password copied to clipboard');
 })
